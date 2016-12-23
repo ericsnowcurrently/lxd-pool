@@ -18,12 +18,15 @@ EMAIL = 'ericsnowcurrently@gmail.com'
 PROJECT_URL = 'https://github.com/ericsnowcurrently/lxd-pool'
 LICENSE = 'New BSD License'
 
-with open(os.path.join(basedir, 'README.rst')) as readme_file:
-    DESCRIPTION = readme_file.read()
+#with open(os.path.join(basedir, 'README.rst')) as readme_file:
+#    DESCRIPTION = readme_file.read()
 
 # dymanically generated data
 
-VERSION = import_module(package_name).__version__
+pkg = import_module(package_name)
+
+DESCRIPTION = pkg.__doc__
+VERSION = pkg.__version__
 
 # set up packages
 
