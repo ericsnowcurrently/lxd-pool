@@ -161,3 +161,9 @@ class Registry(Mapping):
         if spec.args is None:
             spec.args = []
         spec.args.insert(0, (args, kwargs))
+
+    def filter(self, kind):
+        """Iterate over the set of command names that match."""
+        for spec in self._named.values():
+            if spec.kind == kind:
+                yield spec.name

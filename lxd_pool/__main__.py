@@ -163,32 +163,15 @@ def get_parser(prog, *, add_help=True):
                   ).format(sub, spec.summary or '...')
 
     usage += '\n"meta" commands:\n'
-    for sub in sorted([
-            'config',
-            'list',
-            'image-list',
-            ]):
+    for sub in sorted(specs.filter('meta')):
         add_sub(sub)
 
     usage += '\npool commands:\n'
-    for sub in sorted([
-            'create',
-            'destroy',
-            'update',
-            'disable',
-            'enable',
-            'status',
-            'reset',
-            'run',
-            ]):
+    for sub in sorted(specs.filter('pool')):
         add_sub(sub)
 
     usage += '\nimage commands:\n'
-    for sub in sorted([
-            'image-add',
-            'image-update',
-            'image-remove',
-            ]):
+    for sub in sorted(specs.filter('image')):
         add_sub(sub)
 
     # XXX Also add supported env vars to usage?
