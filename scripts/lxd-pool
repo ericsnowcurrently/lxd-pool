@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import os.path
+import sys
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+if os.path.exists(os.path.join(PROJECT_ROOT, 'setup.py')):
+    sys.path.insert(0, PROJECT_ROOT)
+
+
+from lxd_pool.__main__ import parse_args, main
+
+
+if __name__ == '__main__':
+    handler, args, cliargs, showtb = parse_args()
+    sys.exit(main(handler, args, cliargs, showtb=showtb))
