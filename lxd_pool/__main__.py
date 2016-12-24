@@ -39,6 +39,7 @@ def cmd_list(args, cliargs):
 def cmd_image_list(args, cliargs):
     raise NotImplementedError
 
+
 # pool -----
 
 @set_handler('create', 'pool')
@@ -97,6 +98,7 @@ def cmd_reset(args, cliargs):
 @add_arg('command')
 def cmd_run(args, cliargs):
     raise NotImplementedError
+
 
 # image -----
 
