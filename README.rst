@@ -1,5 +1,5 @@
 *********
-lXD-pool
+lxd-pool
 *********
 
 A library (and tool) for managing a pool of LXD containers.
